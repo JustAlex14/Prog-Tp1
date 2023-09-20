@@ -1,19 +1,19 @@
 "use client";
 
-import { ProductFilterResult } from "../types";
+import { ProductFiltersResult } from "../types";
 import { useState } from 'react';
-import { TextInput, Checkbox, Group } from '@mantine/core';
+import { TextInput, Checkbox, Group, Box } from '@mantine/core';
 import { ProductsCategoryData } from "tp-kit/types";
 import { Button } from "tp-kit/components";
 import { useForm } from '@mantine/form';
 
 type Props = {
-    onChange : (values: ProductFilterResult) => void,
+    onChange : (values: ProductFiltersResult) => void,
     categories: ProductsCategoryData[]
 }
 
 export default function ProductFilters({categories, onChange} : Props)  {
-    const form = useForm<ProductFilterResult>({
+    const form = useForm<ProductFiltersResult>({
         initialValues: {
             search : '',
             categoriesSlug : []
@@ -21,13 +21,11 @@ export default function ProductFilters({categories, onChange} : Props)  {
       });
 
     return (
-        <div>
-            <form onSubmit={form.onSubmit((values) => console.log(values))}>
+        <Box maw={340}>
+            <form onSubmit={form.onSubmit((values) => onChange(values))}>
+                <div className="flex flex-col">
                 <TextInput {...form.getInputProps('search')} />
                 <Checkbox.Group
-                    label=""
-                    description=""
-                    withAsterisk
                     {...form.getInputProps('categoriesSlug')}
                     >
                     <Group mt="xs">
@@ -38,10 +36,11 @@ export default function ProductFilters({categories, onChange} : Props)  {
                 </Checkbox.Group>
                 <br/>
                 <Group justify="flex-end" mt="md">
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" variant="ghost" >Submit</Button>
                 </Group>
+                </div>
             </form>
-        </div>
+        </Box>
     )
 }
       
