@@ -28,15 +28,15 @@ export default function ProductFilters({categories, onChange} : Props)  {
                 <Checkbox.Group
                     {...form.getInputProps('categoriesSlug')}
                     >
-                    <Group mt="xs">
+                    <>
                         {categories.map(category => 
-                            <Checkbox value={category.slug} label={category.name + " (" + category.products.length + ")"} />
+                            <Checkbox mt="md" value={category.slug} label={category.name + " (" + category.products.length + ")"} />
                         )}
-                    </Group>
+                   </>
                 </Checkbox.Group>
                 <br/>
-                <Group justify="flex-end" mt="md">
-                    <Button type="submit" variant="ghost" >Submit</Button>
+                <Group className="flex-end" mt="md">
+                    <Button type="submit" className="bg-green-500 mt-3" variant="light">Filtrer</Button>
                 </Group>
                 </div>
             </form>

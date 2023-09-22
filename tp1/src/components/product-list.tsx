@@ -27,10 +27,14 @@ export default function ProductList() {
               }
             ]}
         />
-        <ProductFilters categories={categories} onChange={(values) => {setFilter(values)}}></ProductFilters>
-          {categFiltered.map(category =>
+        <div className="flex mx-5">
+          <div className="flex-auto mt-10">
+            <ProductFilters categories={categories} onChange={(values) => {setFilter(values)}}></ProductFilters>
+          </div>
+          <div className="flex-auto">
+            {categFiltered.map(category =>
               <SectionContainer>
-                <h1>{category.name} ({category.products.length})</h1>
+                <h1 className="mb-3 text-xl"><b>{category.name} ({category.products.length})</b></h1>
                 <ProductGridLayout
                     products={category.products}
                     >
@@ -44,6 +48,8 @@ export default function ProductList() {
                 </ProductGridLayout>
               </SectionContainer>
           )}
+          </div>
+          </div>
       </div>
     )
   }
