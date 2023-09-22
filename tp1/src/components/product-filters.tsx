@@ -35,9 +35,7 @@ export default function ProductFilters({categories, onChange} : Props)  {
                    </>
                 </Checkbox.Group>
                 <br/>
-                <Group className="flex-end" mt="md">
-                    <Button type="submit" className="bg-green-500 mt-3" variant="light">Filtrer</Button>
-                </Group>
+                <Button type="submit">Filtrer</Button>
                 </div>
             </form>
         </Box>
