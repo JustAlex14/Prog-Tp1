@@ -8,7 +8,12 @@ import { useMemo, useState } from "react";
 import { filterProducts } from "@/utils/filter-products";
 const categories = PRODUCTS_CATEGORY_DATA;
 
-export default function ProductList() {
+type Props = {
+  showFilter : false,
+  productSlug: string
+}
+
+export default function ProductList({showFilter}: Props) {
     const [filter, setFilter] = useState<ProductFiltersResult>()
 
     const categFiltered = useMemo(
