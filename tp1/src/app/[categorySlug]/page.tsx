@@ -33,7 +33,7 @@ export default function BlogPostPage({params} : NextPageProps<Props>) {
             items={[
               {
                 label: 'Accueil',
-                url: '#'
+                url: '../'
               },
 			  {
 				label: categ.name,

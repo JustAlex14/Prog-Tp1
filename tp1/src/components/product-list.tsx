@@ -6,6 +6,7 @@ import { BreadCrumbs, Button, ProductCardLayout, ProductGridLayout, SectionConta
 import ProductFilters from '@/components/product-filters';
 import { useMemo, useState } from "react";
 import { filterProducts } from "@/utils/filter-products";
+import Link from "../../node_modules/next/link";
 const categories = PRODUCTS_CATEGORY_DATA;
 
 type Props = {
@@ -39,7 +40,7 @@ export default function ProductList({showFilter}: Props) {
           <div className="flex-auto">
             {categFiltered.map(category =>
               <SectionContainer>
-                <h1 className="mb-3 text-xl"><b>{category.name} ({category.products.length})</b></h1>
+                <Link href={"/" + category.slug} className="mb-3 text-xl">{category.name} ({category.products.length})</Link>
                 <ProductGridLayout
                     products={category.products}
                     >
