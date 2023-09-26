@@ -23,7 +23,7 @@ export default function ProductList({showFilter}: Props) {
       );
 
     return (
-      <div>
+        <SectionContainer>
         <BreadCrumbs
             className=""
             items={[
@@ -33,6 +33,7 @@ export default function ProductList({showFilter}: Props) {
               }
             ]}
         />
+
         <div className="flex mx-5">
           <div className="flex-auto mt-10">
             <ProductFilters categories={categories} onChange={(values) => {setFilter(values)}}></ProductFilters>
@@ -56,7 +57,7 @@ export default function ProductList({showFilter}: Props) {
           )}
           </div>
           </div>
-      </div>
+        </SectionContainer>
     )
   }
   

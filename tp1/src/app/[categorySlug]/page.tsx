@@ -28,20 +28,21 @@ export default function BlogPostPage({params} : NextPageProps<Props>) {
 	// Retourne une 404 si non trouvé
 
 	return <>
-		<BreadCrumbs
-            className=""
-            items={[
-              {
-                label: 'Accueil',
-                url: '../'
-              },
-			  {
-				label: categ.name,
-				url: '##'
-			  }
-            ]}
-        />
 		<SectionContainer>
+			<BreadCrumbs
+				className=""
+				items={[
+				  {
+					label: 'Accueil',
+					url: '../'
+				  },
+				  {
+					label: categ.name,
+					url: '##'
+				  }
+				]}
+			/>
+
 			<h1 className="mb-3 text-xl"><b>{categ.name} ({categ.products.length})</b></h1>
 			<ProductGridLayout
 				products={categ.products}
