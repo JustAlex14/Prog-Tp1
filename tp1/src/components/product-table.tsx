@@ -18,7 +18,7 @@ export default function ProductAttributesTable({attributes}: Props)  {
         <table>
             <tbody>
             {console.log(attributes)}
-            {attributes.map(attribute => <tr><td>{attribute.label}</td><td><ProductRating icon = 'circle' value={attribute.value}/></td></tr>)}
+            {attributes.map(attribute => <tr><td>{attribute.label}</td><td><ProductRating icon = 'circle' value={attribute.rating}/></td></tr>)}
             </tbody>
         </table>
 

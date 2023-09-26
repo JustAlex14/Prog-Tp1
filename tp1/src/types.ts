@@ -5,5 +5,5 @@ export type ProductFiltersResult = {
 
 export type ProductAttribute = {
     label: string,
-    value: number
+    rating: number
 }
