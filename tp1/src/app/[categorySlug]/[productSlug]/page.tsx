@@ -8,6 +8,7 @@ import { ProductGridLayout } from "../../../../tp-kit/components/products/produc
 import { SectionContainer } from "../../../../tp-kit/components/section-container";
 import Image from "next/image";
 import {ProductRating} from "tp-kit/components/products";
+import ProductAttributesTable from "@/components/product-table";
 
 const categories = PRODUCTS_CATEGORY_DATA;
 
@@ -58,6 +59,13 @@ export default function BlogPostPage({params} : NextPageProps<Props>) {
 			<h2>{product.desc}</h2>
 			<h2>{product.price} €</h2>
 			<Button>Ajoutez au panier</Button>
+			<ProductAttributesTable attributes={[
+				{ label: "Intensité", rating: 3 },
+				{ label: "Volupté", rating: 2 },
+				{ label: "Amertume", rating: 1 },
+				{ label: "Onctuosité", rating: 4 },
+				{ label: "Instagramabilité", rating: 5 },
+			]}></ProductAttributesTable>
 
 			<h1 className="mb-3 text-xl"><b>Vous aimerez aussi</b></h1>
 			<ProductGridLayout
